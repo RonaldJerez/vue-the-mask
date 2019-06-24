@@ -11,8 +11,9 @@ branches:
 install:
   - travis_retry npm install
 
-# script:
-#   - npm test
+script:
+  - npm build
+  - npm test
 #   - npm run coveralls
 
 jobs:
