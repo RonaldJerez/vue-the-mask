@@ -1,6 +1,6 @@
 {
   "name": "@rj-pkgs/vue-the-mask",
-  "version": "0.11.1",
+  "version": "0.0.0-development",
   "description": "A lightweight and dependency free mask input created specific for Vue",
   "main": "dist/vue-the-mask.js",
   "scripts": {
@@ -17,7 +17,8 @@
     "e2e:start-fixture": "vue serve ./test/fixture.vue",
     "e2e:start-selenium": "selenium-standalone start",
     "e2e:run": "nightwatch ./test/nightwatch.js",
-    "dev": "cd src/docs && vue serve"
+    "dev": "cd src/docs && vue serve",
+    "semantic-release": "semantic-release"
   },
   "files": [
     "dist/",
@@ -77,25 +78,23 @@
     "@vue/cli-service": "^3.8.4",
     "babel-jest": "^22.4.3",
     "babel-preset-vue-app": "^2.0.0",
-    "codeceptjs-puppeteer": "^1.2.0",
     "cypress": "^2.1.0",
     "jest": "^22.4.3",
     "jest-serializer-vue": "^1.0.0",
-    "nightwatch": "^0.9.21",
     "npm-check-updates": "^2.14.2",
     "npmlog": "4.1.2",
-    "puppeteer": "^1.4.0",
+    "semantic-release": "^15.13.16",
     "serve": "^6.5.7",
-    "testcafe": "^0.20.0",
     "vue": "^2.5.16",
     "vue-jest": "^2.5.0",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "^2.5.16"
   },
-  "dependencies": {
-    "start-server-and-test": "^1.4.1"
-  },
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RonaldJerez/vue-the-mask.git"
   }
 }
