@@ -1,13 +1,12 @@
 {
-  "name": "vue-the-mask",
+  "name": "@rj-pkgs/vue-the-mask",
   "version": "0.11.1",
-  "description": "Tiny (2KB) and dependency free mask input for Vue.js",
+  "description": "A lightweight and dependency free mask input created specific for Vue",
   "main": "dist/vue-the-mask.js",
   "scripts": {
-    "size": "size-limit",
     "upgrade:check": "ncu",
     "upgrade:apply": "ncu -a",
-    "build": "vue build -t lib -n VueTheMask src && cp dist/VueTheMask.umd.min.js dist/vue-the-mask.js",
+    "build": "vue build -t lib -n VueTheMask src/index.js && cp dist/VueTheMask.umd.min.js dist/vue-the-mask.js",
     "docs:build": "cd src/docs && vue build -d ../../docs/",
     "docs:serve": "serve ./",
     "start": "yarn dev",
@@ -40,12 +39,6 @@
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
     }
   },
-  "size-limit": [
-    {
-      "path": "dist/vue-the-mask.umd.min.js",
-      "limit": "1.55 KB"
-    }
-  ],
   "author": "Marcos Neves <marcos.neves@gmail.com> (https://vuejs-tips.github.io/)",
   "license": "MIT",
   "babel": {
@@ -75,12 +68,13 @@
     }
   },
   "browserslist": [
-    "last 2 chrome versions"
+    "last 2 versions",
+    "not IE > 0"
   ],
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0-beta.10",
-    "@vue/cli-plugin-eslint": "^3.0.0-beta.10",
-    "@vue/cli-service": "^3.0.0-beta.10",
+    "@vue/cli-plugin-babel": "^3.8.0",
+    "@vue/cli-plugin-eslint": "^3.8.0",
+    "@vue/cli-service": "^3.8.4",
     "babel-jest": "^22.4.3",
     "babel-preset-vue-app": "^2.0.0",
     "codeceptjs-puppeteer": "^1.2.0",
@@ -92,7 +86,6 @@
     "npmlog": "4.1.2",
     "puppeteer": "^1.4.0",
     "serve": "^6.5.7",
-    "size-limit": "^0.18.0",
     "testcafe": "^0.20.0",
     "vue": "^2.5.16",
     "vue-jest": "^2.5.0",
@@ -101,5 +94,8 @@
   },
   "dependencies": {
     "start-server-and-test": "^1.4.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

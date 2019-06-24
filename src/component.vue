@@ -1,5 +1,5 @@
 <template>
-<input type="text" v-mask="config" :value="display" @input="onInput" />
+  <input type="text" v-mask="config" :value="display" @input="onInput">
 </template>
 
 <script>
@@ -15,7 +15,8 @@ export default {
       type: [String, Array],
       required: true
     },
-    masked: { // by default emits the value unformatted, change to true to format with the mask
+    masked: {
+      // by default emits the value unformatted, change to true to format with the mask
       type: Boolean,
       default: false // raw
     },
@@ -24,25 +25,25 @@ export default {
       default: () => tokens
     }
   },
-  directives: {mask},
-  data () {
+  directives: { mask },
+  data() {
     return {
       lastValue: null, // avoid unecessary emit when has no change
       display: this.value
     }
   },
-  watch : {
-    value (newValue) {
+  watch: {
+    value(newValue) {
       if (newValue !== this.lastValue) {
         this.display = newValue
       }
     },
-    masked () {
+    masked() {
       this.refresh(this.display)
     }
   },
   computed: {
-    config () {
+    config() {
       return {
         mask: this.mask,
         tokens: this.tokens,
@@ -51,17 +52,17 @@ export default {
     }
   },
   methods: {
-    onInput (e) {
+    onInput(e) {
       if (e.isTrusted) return // ignore native event
       this.refresh(e.target.value)
     },
 
-    refresh (value) {
+    refresh(value) {
       this.display = value
-      var value = masker(value, this.mask, this.masked, this.tokens)
-      if (value !== this.lastValue) {
-        this.lastValue = value
-        this.$emit('input', value)
+      var value2 = masker(value, this.mask, this.masked, this.tokens)
+      if (value2 !== this.lastValue) {
+        this.lastValue = value2
+        this.$emit('input', value2)
       }
     }
   }
