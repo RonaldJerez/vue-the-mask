@@ -8,14 +8,12 @@ A lightweight and dependency free mask input created specific for Vue.js
 
 ### [JsFiddle](https://jsfiddle.net/neves/r8cL3msn/1/)
 
-![The Mask Heart](https://raw.githubusercontent.com/vuejs-tips/vue-the-mask/master/img/the-mask-heart.gif)
-
 ## Install
 
 ```
-yarn add vue-the-mask
+yarn add @rj-pkgs/vue-the-mask
 or
-npm i -S vue-the-mask
+npm i @rj-pkgs/vue-the-mask
 ```
 
 ## Usage (two flavors)
@@ -23,14 +21,14 @@ npm i -S vue-the-mask
 ### Global
 
 ```javascript
-import VueTheMask from 'vue-the-mask'
+import VueTheMask from '@rj-pkgs/vue-the-mask'
 Vue.use(VueTheMask)
 ```
 
 ### Local (inside the component)
 
 ```javascript
-import { TheMask } from 'vue-the-mask'
+import { TheMask } from '@rj-pkgs/vue-the-mask'
 export default {
   components: { TheMask }
 }
@@ -39,7 +37,7 @@ export default {
 ### Local (as directive)
 
 ```javascript
-import { mask } from 'vue-the-mask'
+import { mask } from '@rj-pkgs/vue-the-mask'
 export default {
   directives: { mask }
 }
@@ -56,8 +54,6 @@ export default {
 '!': {escape: true}
 ```
 
-![The Mask Money](https://raw.githubusercontent.com/vuejs-tips/vue-the-mask/master/img/the-mask-hammer.gif)
-
 ## Properties
 
 | Property    | Required | Type          | Default           | Description                                |
@@ -71,9 +67,7 @@ export default {
 
 ## Contribution
 
-You're free to contribute to this project by submitting [issues](https://github.com/vuejs-tips/v-tag-input.svg/issues) and/or [pull requests](https://github.com/vuejs-tips/v-tag-input.svg/pulls). This project is test-driven, so keep in mind that every change and new feature should be covered by tests. Your name will be added to the hall of fame ;)
-
-![The Mask Wolf](https://raw.githubusercontent.com/vuejs-tips/vue-the-mask/master/img/the-mask-wolf.gif)
+You're free to contribute to this project by submitting Issues and/or pull requests. This project is test-driven, so keep in mind that every change and new feature should be covered by tests. Your name will be added to the hall of fame ;)
 
 ## License
 
