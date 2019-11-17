@@ -1,15 +1,16 @@
-export default function dynamicMask (maskit, masks, tokens) {
+import maskit from './maskit'
+
+export default function dynamicMask (masks, value, masked, tokens) {
   masks = masks.slice().sort((a, b) => a.length - b.length)
-  return function (value, mask, masked = true) {
-    var i = 0
-    while (i < masks.length) {
-      var currentMask = masks[i]
-      i++
-      var nextMask = masks[i]
-      if (! (nextMask && maskit(value, nextMask, true, tokens).length > currentMask.length) ) {
-        return maskit(value, currentMask, masked, tokens)
-      }
+
+  for (let i = 0; i < masks.length; i++) {
+    const currentMask = masks[i]
+    const nextMask = masks[i+1]
+
+    if ( !(nextMask && maskit(value, nextMask, masked, tokens).length > currentMask.length) ) {
+      return maskit(value, currentMask, masked, tokens)
     }
-    return '' // empty masks
   }
+
+  return '' // empty masks
 }

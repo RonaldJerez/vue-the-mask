@@ -1,4 +1,6 @@
-export default function maskit(value, mask, masked = true, tokens) {
+import defaultTokens from './tokens'
+
+export default function maskit(value, mask, masked = true, tokens = defaultTokens) {
   value = value || ''
   mask = mask || ''
   var iMask = 0
