@@ -8,16 +8,10 @@
     "upgrade:apply": "ncu -a",
     "build": "vue build -t lib -n VueTheMask src/index.js && cp dist/VueTheMask.umd.min.js dist/vue-the-mask.js",
     "docs:build": "cd src/docs && vue build -d ../../docs/",
-    "docs:serve": "serve ./",
+    "docs:serve": "serve ./docs/",
     "start": "yarn dev",
-    "test": "echo 'tests are broken, skipping for now to get initial cicle ci build'",
-    "test-backup": "cypress run --dev --record false",
-    "ci": "start-server-and-test e2e:start-fixture http://localhost:8080 cypress:open",
-    "cypress:open": "cypress open",
-    "e2e:install-global-dependencies": "yarn global add selenium-standalone@latest && selenium-standalone install",
-    "e2e:start-fixture": "vue serve ./test/fixture.vue",
-    "e2e:start-selenium": "selenium-standalone start",
-    "e2e:run": "nightwatch ./test/nightwatch.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watchAll --coverage",
     "dev": "cd src/docs && vue serve",
     "semantic-release": "semantic-release"
   },
@@ -31,6 +25,8 @@
     "mask"
   ],
   "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
     "moduleFileExtensions": [
       "js",
       "json",
@@ -41,7 +37,10 @@
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
     }
   },
-  "author": "Marcos Neves <marcos.neves@gmail.com> (https://vuejs-tips.github.io/)",
+  "contributors": [
+    "Marcos Neves <marcos.neves@gmail.com> (https://vuejs-tips.github.io/)",
+    "Ronald Jerez <dlanor@gmail.com>"
+  ],
   "license": "MIT",
   "babel": {
     "env": {
@@ -79,7 +78,7 @@
     "@vue/cli-service": "^3.8.4",
     "babel-jest": "^22.4.3",
     "babel-preset-vue-app": "^2.0.0",
-    "cypress": "^2.1.0",
+    "fsevents": "^2.1.2",
     "jest": "^22.4.3",
     "jest-serializer-vue": "^1.0.0",
     "npm-check-updates": "^2.14.2",

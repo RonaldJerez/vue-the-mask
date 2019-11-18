@@ -1,6 +1,10 @@
 import maskit from '../src/maskit'
 import tokens from '../src/tokens'
 
+test('default vals', () => {
+  expect(maskit('123', null, undefined, tokens)).toBe('')
+})
+
 test('12 #.#', () => {
   expect(maskit('12', '#.#', true, tokens)).toBe('1.2')
 })
@@ -30,7 +34,7 @@ test('raw phone number', () => {
 })
 
 test('abcd12345 AAA-####', () => {
-  expect(maskit('abcd12345', 'AAA-####', true, tokens)).toBe('ABC-1234')
+  expect(maskit('abcd12345', 'AAa-####', true, tokens)).toBe('ABc-1234')
 })
 
 test('a5-12-34 => (XX) - ## - ##', () => {

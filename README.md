@@ -4,9 +4,7 @@
 
 A lightweight and dependency free mask input created specific for Vue.js
 
-## [Docs and Demo](https://vuejs-tips.github.io/vue-the-mask)
-
-### [JsFiddle](https://jsfiddle.net/neves/r8cL3msn/1/)
+## [Docs and Demo](https://ronaldjerez.github.io/vue-the-mask)
 
 ## Install
 
