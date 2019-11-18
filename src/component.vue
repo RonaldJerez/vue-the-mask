@@ -1,5 +1,5 @@
 <template>
-  <input type="text" v-mask="config" :value="display" @input="onInput">
+  <input type="text" v-mask="config" :value="display" @input="onInput" />
 </template>
 
 <script>
@@ -47,7 +47,7 @@ export default {
       return {
         mask: this.mask,
         tokens: this.tokens,
-        masked: this.masked
+        masked: true
       }
     }
   },
