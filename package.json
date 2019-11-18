@@ -13,7 +13,8 @@
     "test": "jest --coverage",
     "test:watch": "jest --watchAll --coverage",
     "dev": "cd src/docs && vue serve",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
   },
   "files": [
     "dist/",
@@ -39,7 +40,7 @@
   },
   "contributors": [
     "Marcos Neves <marcos.neves@gmail.com> (https://vuejs-tips.github.io/)",
-    "Ronald Jerez <dlanor@gmail.com>"
+    "Ronald Jerez <dlanor@gmail.com> (https://ronaldjerez.github.io/)"
   ],
   "license": "MIT",
   "babel": {
@@ -63,32 +64,29 @@
       "eslint:recommended"
     ]
   },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
   "browserslist": [
     "last 2 versions",
     "not IE > 0"
   ],
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-eslint": "^3.8.0",
-    "@vue/cli-service": "^3.8.4",
-    "babel-jest": "^22.4.3",
+    "@vue/cli-plugin-babel": "^4.0.5",
+    "@vue/cli-plugin-eslint": "^4.0.5",
+    "@vue/cli-service": "^4.0.5",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^24.9.0",
     "babel-preset-vue-app": "^2.0.0",
+    "coveralls": "^3.0.3",
     "fsevents": "^2.1.2",
-    "jest": "^22.4.3",
-    "jest-serializer-vue": "^1.0.0",
-    "npm-check-updates": "^2.14.2",
+    "jest": "^24.9.0",
+    "jest-serializer-vue": "^2.0.2",
+    "npm-check-updates": "^3.2.1",
     "npmlog": "4.1.2",
-    "semantic-release": "^15.13.16",
-    "serve": "^6.5.7",
-    "vue": "^2.5.16",
-    "vue-jest": "^2.5.0",
-    "vue-loader": "^14.2.2",
-    "vue-template-compiler": "^2.5.16"
+    "semantic-release": "^15.13.31",
+    "serve": "^11.2.0",
+    "vue": "^2.6.10",
+    "vue-jest": "^3.0.5",
+    "vue-loader": "^15.7.2",
+    "vue-template-compiler": "^2.6.10"
   },
   "publishConfig": {
     "access": "public"
