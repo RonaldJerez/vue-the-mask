@@ -1,6 +1,6 @@
 import maskit from './maskit'
 
-export default function dynamicMask (masks, value, masked, tokens) {
+export default function dynamicMask (value, masks, masked, tokens) {
   masks = masks.slice().sort((a, b) => a.length - b.length)
 
   for (let i = 0; i < masks.length; i++) {

@@ -71,7 +71,6 @@
     "@vue/cli-plugin-babel": "^4.0.5",
     "@vue/cli-plugin-eslint": "^4.0.5",
     "@vue/cli-service": "^4.0.5",
-    "babel-core": "^6.26.3",
     "babel-jest": "^24.9.0",
     "babel-preset-vue-app": "^2.0.0",
     "coveralls": "^3.0.3",
