@@ -276,16 +276,14 @@ function directive_event(name) {
 
   el.oninput = function (evt) {
     if (!evt.isTrusted) return; // avoid infinite loop
-    // by default, keep cursor at same position as before the mask
+    // gather some information about the input before masking
 
-    var position = el.selectionEnd; // save the character just inserted
-
+    var position = el.selectionEnd;
+    var isCursorAtEnd = evt.data && position == el.value.length;
     var digit = el.value[position - 1];
     el.value = src_masker(el.value, config.mask, config.masked, config.tokens); // set the cursor position to an appropriate location
 
     if (el === document.activeElement) {
-      var isCursorAtEnd = evt.data && position == el.value.length;
-
       if (isCursorAtEnd) {
         position = el.value.length;
       } else if (digit) {
