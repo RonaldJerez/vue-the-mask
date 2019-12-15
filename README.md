@@ -1,6 +1,6 @@
-# The Mask
+# DEPRECATED: The Mask
 
-> The original seems to be abandoned, I am trying to fix a few outstanding issues and update this repo a bit. WORK IN PROGRESS.
+## Deprecated: Development will continue under [vue-input-facade](https://github.com/ronaldjerez/vue-input-facade), as the codebase has diverged greatly from upstream.
 
 A lightweight and dependency free mask input created specific for Vue.js
 
